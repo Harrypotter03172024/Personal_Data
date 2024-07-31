@@ -1,0 +1,48 @@
+Hints
+- Your implementation ofthe search method must beagenerator.
+- You can use results of search inthe implementation of first method
+Examples
+1.Example1
+Given the following example JSON file:
+{ "items": [ [‘0
+{"name": "The Shawshank Redemption", "tags": ["963", "drama"]},
+{"name": "The Godfather", "tags": ["793", "drama", "crime"]},
+{"name": uThe Dark Knight". "tags": ["action", "crime", "drama"]},
+{"name": uThe Godfather: Part II", "tags": ["793", "crime", "drama"]},
+]
+}
+If we create the SearchByTag class as follows:
+search_1 = SearchByTag(‘movies.json'. 'crime') it!
+And we callthe first method as follows:
+first = search_1.first()
+The following data should be returned:
+>>> {"name": "The Godfather", "tags": ["705", "drama", "crime"]} FD
+lf we were to call search() multiple times:
+data = search_1.search()
+In the subsequent iterations we should receive the following data:
+>>> {"name": "The Godfather", "tags": ["785", "drama". "crime"l} IE1
+>>> {"name": "The Dark Knight", "tags": ["action", "crime", "drama"]}
+>>> {"name": "The Godfather: Part II", "tags": ["795", "crime", "drama"]}
+If we were to convert the results into a list in the following manner:
+data_list = list(se1f .search_1 .search( ))
+We would receive the following list:
+
+[{"name": "The Godfather", "tags": ["703", "drama", "crime"]},
+{"name": "The Dark Knight" , "tags": ["action", "crime", "drama"]},
+{"name": "The Godfather: Part II" , "tags": ["763", "crime" ,"drama"]}]
+
+2 Example 2
+Given the following example JSON file:
+{ "items" : [
+{"name" : "The Shawshank Redemption" },
+{"name" : "The Godfather"}
+]
+}
+If we create the SearchByTagclass as follows:
+search_2 = SearchByTag( 'movies-no-tags.json' , '90s')
+And we call the first method as follows:
+first = search_2.first() [El
+StopIteration should be raised.
+Assumptions
+. Python version is 3.8
+. Every test is using a valid JSON
